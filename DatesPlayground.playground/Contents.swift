@@ -14,3 +14,17 @@ let formatter = DateFormatter()
 
 // use the formatter to print the day in a friendly format.
 // hint, use NSDateFormatter.com to get an appropriate printing format string.
+
+formatter.dateFormat = "a"
+
+let mid: String
+if(formatter.string(from: date) == "PM") {
+    mid = "after noon"
+}
+else {
+    mid = "after midnight"
+}
+
+formatter.dateFormat = "EEEE, MMMM d, 'in the year of our Lord,' yyyy. h 'hours and' m 'minutes' '\(mid).'"
+
+print(formatter.string(from: date))
